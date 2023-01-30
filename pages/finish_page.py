@@ -10,22 +10,20 @@ class FinishPage(Base):
         self.browser = browser
 
     check_button = '//div[@class="base-checkout-collapse-right__button_BnG"]'
-    final_name = '//*[@id="checkout"]/div/div[1]/div/div/div[3]/div/div/div[1]'
-    final_price = '//*[@id="checkout"]/div/div[1]/div/div/div[3]/div/div/div[2]'
+#    final_name = '//*[@id="checkout"]/div/div[1]/div/div/div[3]/div/div/div[1]'
+#    final_price = '//*[@id="checkout"]/div/div[1]/div/div/div[3]/div/div/div[2]'
 
     def get_check_button(self):
         return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.check_button)))
 
-    def get_final_name(self):
-        iname_final = self.browser.find_element(By.XPATH, self.final_name)
-        iname_final_value = iname_final.text.split(' (')
-        print(iname_final_value)
-        return iname_final_value[0]
 
-    def get_final_price(self):
-        iprice_final = self.browser.find_element(By.XPATH, self.final_price)
-        iprice_final_value = iprice_final.text
-        return iprice_final_value
+#    def get_final_name(self):
+#        return self.browser.find_element(By.XPATH, self.final_name)
+
+#    def get_final_price(self):
+#        return self.browser.find_element(By.XPATH, self.final_price)
+
+
 
     def click_check_button(self):
         self.get_check_button().click()
@@ -34,4 +32,6 @@ class FinishPage(Base):
         self.get_current_url()
         self.get_check_button()
         self.click_check_button()
+#        self.assert_text(Cart.get_cart_name(), self.get_final_name())
+#        self.get_final_price()
         self.get_screenshot()
