@@ -20,7 +20,7 @@ class Base:
     def get_screenshot(self):
         now_date = datetime.datetime.utcnow().strftime('%Y.%m.%d.%H.%M.%S')
         screenshot_name = 'screenshot' + now_date + '.png'
-        self.browser.save_screenshot('/Users/ivankedrov/Python_Selenium_Final/screen' + screenshot_name)
+        self.browser.get_screenshot_as_file(f'./screen/ {screenshot_name}')
 
 
 
