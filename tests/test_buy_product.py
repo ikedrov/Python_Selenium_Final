@@ -1,7 +1,6 @@
 #python -m pytest -s -v
 import time
 from selenium import webdriver
-
 from pages.cart_page import Cart
 from pages.finish_page import FinishPage
 from pages.iphones_page import Iphones
@@ -32,8 +31,5 @@ def test_buy_product(set_up):
     fp = FinishPage(browser)
     fp.finish()
 
-#    assert Cart.get_cart_name(self) == FinishPage.get_final_name(self)
-#    assert Cart.get_cart_price(self) == FinishPage.get_final_price(self)
-#    assert cp.return_cart_name() == fp.return_final_name()
     time.sleep(5)
     browser.quit()
