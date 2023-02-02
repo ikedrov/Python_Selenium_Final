@@ -1,7 +1,7 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
+from pages.locators import MainPageLocators
 
 
 class MainPage(Base):
@@ -12,9 +12,8 @@ class MainPage(Base):
         super().__init__(browser)
         self.browser = browser
 
-    smartphones_button = '//*[@id="catalog"]/div/div/div/div[3]/a/a'
     def get_smartphones_button(self):
-        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.smartphones_button)))
+        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((MainPageLocators.SMARTPHONES_BUTTON)))
 
     def click_smartphones_button(self):
         self.get_smartphones_button().click()

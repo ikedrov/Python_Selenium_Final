@@ -1,27 +1,23 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
+from pages.locators import IphonesPageLocators
 import time
+
 
 class Iphones(Base):
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
 
-    ios_button = '/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div/a[3]'
-    buy_button = '/html/body/div[2]/div/div[2]/div[2]/div[3]/div/div[2]/div[2]/div[4]/button[2]'
-    cart_button = '//*[@id="header-search"]/div/div[3]/div[1]/div/a/span[2]/span'
-
     def get_ios_button(self):
-        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.ios_button)))
-
+        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((IphonesPageLocators.IOS_BUTTON)))
 
     def get_buy_button(self):
-        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.buy_button)))
+        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((IphonesPageLocators.BUY_BUTTON)))
 
     def get_cart_button(self):
-        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.cart_button)))
+        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((IphonesPageLocators.CART_BUTTON)))
 
     def click_ios_button(self):
         self.get_ios_button().click()

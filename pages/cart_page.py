@@ -1,33 +1,31 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
+from pages.locators import CartPageLocators
 import time
+
 
 class Cart(Base):
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
 
-    finish_button = '//button[@id="buy-btn-main"]'
-    cart_name = '//div[@class="cart-items__product-name"]'
-    cart_price = '//span[@class="price__current"]'
     iname_value = ''
     iprice_value = ''
 
     def get_finish_button(self):
-        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.finish_button)))
+        return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((CartPageLocators.FINISH_BUTTON)))
 
     def get_cart_name(self):
         global iname_value
-        iname = self.browser.find_element(By.XPATH, self.cart_name)
+        iname = self.browser.find_element(*CartPageLocators.CART_NAME)
         iname_value = iname.text
         print(iname_value)
         return iname_value
 
     def get_cart_price(self):
         global iprice_value
-        iprice = self.browser.find_element(By.XPATH, self.cart_price)
+        iprice = self.browser.find_element(*CartPageLocators.CART_PRICE)
         iprice_value = iprice.text
         print(iprice_value)
         return iprice_value
