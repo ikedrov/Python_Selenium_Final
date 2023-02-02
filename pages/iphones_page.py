@@ -3,6 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from pages.locators import IphonesPageLocators
 import time
+import allure
+from utilities.logger import Logger
 
 
 class Iphones(Base):
@@ -29,8 +31,11 @@ class Iphones(Base):
         self.get_cart_button().click()
 
     def go_to_cart(self):
-        self.get_current_url()
-        self.click_ios_button()
-        self.click_buy_button()
-        time.sleep(5)
-        self.click_cart_button()
+        with allure.step('Go to cart'):
+            Logger.add_start_step(method='go_to_cart')
+            self.get_current_url()
+            self.click_ios_button()
+            self.click_buy_button()
+            time.sleep(5)
+            self.click_cart_button()
+            Logger.add_end_step(url=self.browser.current_url, method='go_to_cart')

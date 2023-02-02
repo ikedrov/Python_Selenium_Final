@@ -1,0 +1,14 @@
+Start test
+Current url https://www.dns-shop.ru/
+Current url https://www.dns-shop.ru/catalog/17a890dc16404e77/smartfony-i-fototexnika/
+Current url https://www.dns-shop.ru/catalog/af47fe7c3bae7fd7/smartfony-i-gadzhety/
+Current url https://www.dns-shop.ru/catalog/17a8a01d16404e77/smartfony/
+Current url https://www.dns-shop.ru/cart/
+4.7" Смартфон Apple iPhone SE 2022 64 ГБ белый
+36 999 ₽
+Current url https://www.dns-shop.ru/checkout/
+4.7" Смартфон Apple iPhone SE 2022 64 ГБ белый
+36 999 ₽
+Word value ok
+Price value ok
+Finish test

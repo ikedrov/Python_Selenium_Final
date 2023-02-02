@@ -3,6 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from pages.locators import CartPageLocators
 import time
+import allure
+from utilities.logger import Logger
 
 
 class Cart(Base):
@@ -34,9 +36,12 @@ class Cart(Base):
         self.get_finish_button().click()
 
     def go_to_finish(self):
-        self.get_current_url()
-        self.get_cart_name()
-        self.get_cart_price()
-        self.click_finish_button()
-        time.sleep(5)
+        with allure.step('Go to finish'):
+            Logger.add_start_step(method='go_to_finish')
+            self.get_current_url()
+            self.get_cart_name()
+            self.get_cart_price()
+            self.click_finish_button()
+            time.sleep(5)
+            Logger.add_end_step(url=self.browser.current_url, method='go_to_finish')
 

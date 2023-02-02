@@ -3,6 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from pages.cart_page import Cart
 from pages.locators import FinishPageLocators
+from utilities.logger import Logger
+import allure
 
 
 class FinishPage(Base):
@@ -34,11 +36,14 @@ class FinishPage(Base):
         self.get_check_button().click()
 
     def finish(self):
-        self.get_current_url()
-        self.get_check_button()
-        self.click_check_button()
-        self.get_final_name()
-        self.get_final_price()
-        self.assert_text(Cart.iname_value, self.i_final_name_value)
-        self.assert_price(Cart.iprice_value, self.final_price_value)
-        self.get_screenshot()
+        with allure.step('Finish'):
+            Logger.add_start_step(method='finish')
+            self.get_current_url()
+            self.get_check_button()
+            self.click_check_button()
+            self.get_final_name()
+            self.get_final_price()
+            self.assert_text(Cart.iname_value, self.i_final_name_value)
+            self.assert_price(Cart.iprice_value, self.final_price_value)
+            self.get_screenshot()
+            Logger.add_end_step(url=self.browser.current_url, method='finish')

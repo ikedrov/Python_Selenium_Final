@@ -2,6 +2,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.locators import SmartsPageLocators
 from base.base_class import Base
+from utilities.logger import Logger
+import allure
 
 
 class Smarts(Base):
@@ -16,5 +18,8 @@ class Smarts(Base):
         self.get_smarts_button().click()
 
     def go_to_smarts(self):
-        self.get_current_url()
-        self.click_smarts_button()
+        with allure.step('Go to smarts'):
+            Logger.add_start_step(method='go_to_smarts')
+            self.get_current_url()
+            self.click_smarts_button()
+            Logger.add_end_step(url=self.browser.current_url, method='go_to_smarts')

@@ -1,0 +1,66 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:13.727933
+Start name method: go_to_smartphones
+
+End time: 2023-02-02 22:26:16.087394
+End name method: go_to_smartphones
+URL: https://www.dns-shop.ru/catalog/17a890dc16404e77/smartfony-i-fototexnika/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:16.087525
+Start name method: go_to_smarts_and_gadgets
+
+End time: 2023-02-02 22:26:18.554508
+End name method: go_to_smarts_and_gadgets
+URL: https://www.dns-shop.ru/catalog/af47fe7c3bae7fd7/smartfony-i-gadzhety/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:18.554641
+Start name method: go_to_smarts
+
+End time: 2023-02-02 22:26:20.305161
+End name method: go_to_smarts
+URL: https://www.dns-shop.ru/catalog/17a8a01d16404e77/smartfony/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:20.305316
+Start name method: go_to_cart
+
+End time: 2023-02-02 22:26:28.619425
+End name method: go_to_cart
+URL: https://www.dns-shop.ru/cart/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:28.619610
+Start name method: go_to_finish
+
+End time: 2023-02-02 22:26:33.682264
+End name method: go_to_finish
+URL: https://www.dns-shop.ru/checkout/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2023-02-02 22:26:33.682561
+Start name method: finish
+
+End time: 2023-02-02 22:26:33.888335
+End name method: finish
+URL: https://www.dns-shop.ru/checkout/
+
+-----

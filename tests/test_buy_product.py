@@ -1,5 +1,9 @@
 #python -m pytest -s -v
+#python3 -m pytest --alluredir=test_results/ tests/test_buy_product.py
+#cd /Users/ivankedrov/Python_Selenium_Final
+#allure serve test_results/
 import time
+import allure
 from selenium import webdriver
 from pages.cart_page import Cart
 from pages.finish_page import FinishPage
@@ -9,6 +13,7 @@ from pages.smart_photo_page import SmartPhoto
 from pages.smarts_page import Smarts
 
 
+@allure.description('Test Buy Product')
 def test_buy_product(set_up):
 
     browser = webdriver.Chrome()
